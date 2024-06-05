@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</head> 
+<body> 
+    <div class="w-75 mx-auto p-5 shadow-lg my-5">
+        <h1 class="fw-bolder text-center text-uppercase">crud system</h1>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control border-0 border-bottom rounded-0" id="productName" placeholder="product Name">
+            <label for="productName">Product Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control border-0 border-bottom rounded-0" id="productPrice" placeholder="Product Price">
+            <label for="productPrice">Product Price</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input list="categories" type="text" class="form-control border-0 border-bottom rounded-0" id="productCategory" placeholder="Product Category">
+            <label for="productCategory">Product Category</label>
+            <datalist id="categories">
+                <option value="tv">
+                <option value="samsung">
+                <option value="screen">
+                <option value="mobile">
+                <option value="electronic"> 
+            </datalist>
+        </div>
+        <div class="mb-3">
+            <input type="file" class="form-control border-0 border-bottom rounded-0" id="productImage" placeholder="Product Image">
+            <!-- <label for="productImage">Product Image</label> -->
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control border-0 border-bottom rounded-0" placeholder="Description" id="productDesc" style="height:100px"></textarea>
+            <label for="productDesc">Description</label>
+        </div> 
+        <button class="btn btn-info text-light rounded-0 my-3" id="addBtn">Add Product</button>
+        <button class="btn btn-danger text-light rounded-0 m-3" id="resetBtn" onclick="resetForm()">Reset</button>
+    </div>
+
+    <input oninput="searchProduct()" id="search" type="text" placeholder="search by product name" class="form-control w-50 m-auto my-5"/>
+
+    <div class="container">
+        <div class="row gy-5 " id="rowBody">
+        </div>
+    </div>
+ 
+    <script src="main.js"></script>
+</body>
+</html>
